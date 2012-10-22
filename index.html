@@ -9,14 +9,23 @@
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
     <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script src="javascripts/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="javascripts/headsmart.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-        $('#main_content').headsmart()
+        $('#main_content').headsmart();
       })
     </script>
+    <style>
+      /* hacks for now */
+      section#downloads a.zip:hover {
+        background-position: 0 0;
+      }
+      section#downloads a.tgz:hover {
+        background-position: -275px 0;
+      }
+    </style>
     <title>ES6 is Nigh by domenic</title>
   </head>
 
@@ -37,7 +46,7 @@
 
       <section id="downloads">
         <span class="inner">
-          <a href="https://github.com/domenic/es6isnigh/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/domenic/es6isnigh/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+          <a class="zip"></a><a class="tgz"></a> <!-- hacks for now -->
         </span>
       </section>
 
@@ -46,17 +55,23 @@
 
 
       <section id="main_content">
-        <h3>Slides from EmpireJS</h3>
+      <h3>Full Slides</h3>
 
-<ul>
-<li>PowerPoint</li>
-<li>PDF</li>
-</ul><h3>Full Slides</h3>
+      <ul>
+        <li><a href="assets/presentation-full.pptx">PowerPoint</a></li>
+        <li><a href="assets/presentation-full.pdf">PDF</a></li>
+      </ul>
 
-<ul>
-<li>PowerPoint</li>
-<li>PDF</li>
-</ul>
+      <h3>EmpireJS Slides</h3>
+
+      <p>These are the slides I presented at EmpireJS. To fit the talk into 30 minutes, I ruthlessly cut slides compared
+        to the above. Recommended for historical purposes only.</p>
+
+      <ul>
+        <li><a href="assets/presentation-30-minutes.pptx">PowerPoint</a></li>
+        <li><a href="assets/presentation-30-minutes.pdf">PDF</a></li>
+      </ul>
+
       </section>
 
       <footer>
@@ -67,22 +82,23 @@
           <span class="left-tail"></span>
           <span class="right-tail"></span>
         </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
       </footer>
 
     </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-35742874-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35742874-1']);
+      _gaq.push(['_trackPageview']);
 
+      (function () {
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = '//google-analytics.com/ga.js';
+
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
